@@ -1,10 +1,5 @@
 package org.lizhankang.http.utils;
-//import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
-//import com.fasterxml.jackson.databind.ObjectMapper;
-//import com.lizhankang.pojo.KaPurchaseResponse;
-
-//import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -12,32 +7,8 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.Random;
-
-//import java.io.BufferedReader;
-//import java.io.FileReader;
-//import java.io.IOException;
-//import java.security.KeyFactory;
-//import java.security.PrivateKey;
-//import java.security.Security;
-//import java.security.spec.PKCS8EncodedKeySpec;
-//import java.util.Base64;
-//import java.io.BufferedReader;
-//import java.io.FileReader;
-//import java.io.IOException;
-
-//import java.io.BufferedReader;
-//import java.io.FileReader;
-//import java.security.KeyFactory;
-//import java.security.PrivateKey;
-//import java.security.spec.PKCS8EncodedKeySpec;
-//import org.bouncycastle.openssl.PEMKeyPair;
-//import org.bouncycastle.openssl.PEMParser;
-//import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
-
-
 import java.io.BufferedReader;
 import java.io.FileReader;
-
 import org.bouncycastle.openssl.PEMKeyPair;
 import org.bouncycastle.openssl.PEMParser;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
@@ -128,7 +99,7 @@ public class ApiUtils {
      * 读取私钥
      */
 
-    public static String readPrivateKey(String privateKeyPath){
+    public static String getPrivateKey(String privateKeyPath){
         String privateKeyBase64 = "";
         Security.addProvider(new BouncyCastleProvider());
 

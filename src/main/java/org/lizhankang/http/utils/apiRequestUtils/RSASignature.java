@@ -1,15 +1,13 @@
 package org.lizhankang.http.utils.apiRequestUtils;
 
-import org.apache.commons.codec.binary.Base64;
-
 import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.Signature;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
+import org.apache.commons.codec.binary.Base64;
 
-//import static org.example.HttpProxyLitePOS.httpPostPos;
 
 /**
  * 签名、验签

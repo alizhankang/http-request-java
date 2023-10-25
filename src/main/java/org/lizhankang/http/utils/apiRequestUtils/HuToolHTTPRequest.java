@@ -12,7 +12,7 @@ public class HuToolHTTPRequest {
     private static final String CHARSET_UTF8 = "utf8";
     private static final String VAPI_APPID = "28lpm0000002";
     private static final String VAPI_DOMAIN = "https://vapi.shouqianba.com/";
-    private static final String VAPI_PRIVATE_KEY = ApiUtils.readPrivateKey("/Users/sqb/all-shouqianba-projects/python-projects/ka-request/common/privateKey.pem");
+    private static final String VAPI_PRIVATE_KEY = ApiUtils.getPrivateKey("/Users/sqb/all-shouqianba-projects/python-projects/ka-request/common/privateKey.pem");
     private String url;
     private final JSONObject body = new JSONObject();
     private final JSONObject body_request = new JSONObject();
