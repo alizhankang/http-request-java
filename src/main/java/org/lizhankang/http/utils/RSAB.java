@@ -1,4 +1,4 @@
-package org.lizhankang.http.utils.apiRequestUtils;
+package org.lizhankang.http.utils;
 
 import java.security.KeyFactory;
 import java.security.PrivateKey;
@@ -12,7 +12,7 @@ import org.apache.commons.codec.binary.Base64;
 /**
  * 签名、验签
  **/
-public class RSASignature {
+public class RSAB {
     /**
      * 签名算法
      */

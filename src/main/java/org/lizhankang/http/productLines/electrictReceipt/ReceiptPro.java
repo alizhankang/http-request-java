@@ -1,11 +1,10 @@
 package org.lizhankang.http.productLines.electrictReceipt;
 
 import com.alibaba.fastjson.JSONObject;
-import org.lizhankang.http.utils.apiRequestUtils.HuToolHTTPRequest;
+import org.lizhankang.http.utils.API;
 
 
 public class ReceiptPro {
-    private final static HuToolHTTPRequest KA_API_REQUEST = new HuToolHTTPRequest();
 
     public static void main(String[] args) throws Exception {
         getUserToken();
@@ -21,6 +20,6 @@ public class ReceiptPro {
         bizBody.put("appid", "wx96aee8ddb7f7e41c");
         // 李占康openid: oDfgJ5GLCXrvxkNHysnyvuYjHcpA
         bizBody.put("openid", "oDfgJ5GLCXrvxkNHysnyvuYjHcpA");
-        KA_API_REQUEST.vapiGateWay(endPoint, bizBody);
+        API.VipGateWay.post(endPoint, bizBody);
     }
 }

@@ -96,7 +96,7 @@ public class ApiUtils {
 
 
     /**
-     * 读取私钥
+     * 读取密钥
      */
 
     public static String getPrivateKey(String privateKeyPath){
