@@ -13,7 +13,7 @@ import org.bouncycastle.openssl.PEMKeyPair;
 import org.bouncycastle.openssl.PEMParser;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import java.security.Security;
-
+import java.util.UUID;
 
 
 public class ApiUtils {
@@ -39,23 +39,45 @@ public class ApiUtils {
      * 获取 **天后的当前时间
      */
     public static String getSomeDaysLaterDateTime(long days) {
-        // 获取当前时间
         LocalDateTime currentDateTime = LocalDateTime.now();
-//        System.out.println("当前时间: " + currentDateTime);
-
-        // 添加30天
         LocalDateTime futureDateTime = currentDateTime.plus(days, ChronoUnit.DAYS);
-
-        // 获取30天后的时间
-//        System.out.println("30天后的时间: " + futureDateTime);
-
-        // 指定日期时间格式
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX");
         // 设置时区为+08:00（中国时区）
         ZoneId chinaZone = ZoneId.of("Asia/Shanghai");
         String formattedDate = futureDateTime.atZone(chinaZone).format(formatter);
 
        return formattedDate;
+    }
+
+
+    public static String getSomeHoursLaterDateTime(long hours) {
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        LocalDateTime futureDateTime = currentDateTime.plus(hours, ChronoUnit.HOURS);
+        // 指定日期时间格式
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX");
+        // 设置时区为+08:00（中国时区）
+        ZoneId chinaZone = ZoneId.of("Asia/Shanghai");
+        String formattedDate = futureDateTime.atZone(chinaZone).format(formatter);
+
+        return formattedDate;
+    }
+
+    /**
+     * 获取 **分钟后 的时间点
+     * @param minutes
+     * @return
+     */
+    public static String getSomeMinutesLaterDateTime(long minutes) {
+        // 获取当前时间
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        // 添加30天
+        LocalDateTime futureDateTime = currentDateTime.plus(minutes, ChronoUnit.MINUTES);
+        // 指定日期时间格式
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX");
+        // 设置时区为+08:00（中国时区）
+        ZoneId chinaZone = ZoneId.of("Asia/Shanghai");
+        String formattedDate = futureDateTime.atZone(chinaZone).format(formatter);
+        return formattedDate;
     }
 
     /**
@@ -73,6 +95,28 @@ public class ApiUtils {
         }
         return numberString.toString();
     }
+
+    /**
+     * 获取requestId
+     * @return
+     */
+    public static String getReuestId(){
+        UUID uuid = UUID.randomUUID();
+        return uuid.toString().replace("-", "");
+    }
+
+    /**
+     * 获取指定长度的requestId
+     * @param len
+     * @return
+     */
+    public static String getReuestId(int len){
+
+        UUID uuid = UUID.randomUUID();
+        String uuidString = uuid.toString().replace("-", "");
+        return uuidString.substring(0, len);
+    }
+
 
     /**
      * 将第三方接口返回体转化成需要的Java对象

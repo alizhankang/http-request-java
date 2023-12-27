@@ -10,10 +10,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Map;
 
-public enum API {
+public enum ApiGateWay {
     VapiGateWay,
     VipGateWay;
-    private static final Logger log = LoggerFactory.getLogger(API.class);
+    private static final Logger log = LoggerFactory.getLogger(ApiGateWay.class);
     private static String DOMAIN;
     private static String APPID;
     private static String PRIVATE_KEY;
